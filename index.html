@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Grupo ATU Formación - Cursos gratuitos para ingenieros</title>
+  <style>
+    :root {
+      --color-azul: #0D2F6F;
+      --color-amarillo: #FFC107;
+      --color-blanco: #ffffff;
+      --font-family: Arial, sans-serif;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: var(--font-family); color: var(--color-azul); background-color: var(--color-blanco); }
+    header { background-color: var(--color-azul); padding: 1rem; }
+    header .logo { color: var(--color-blanco); font-size: 1.5rem; font-weight: bold; }
+    main { padding: 2rem; }
+    .hero { text-align: center; margin-bottom: 2rem; }
+    .hero h1 { font-size: 2rem; margin-bottom: 0.5rem; }
+    .hero p { font-size: 1.2rem; margin-bottom: 1rem; }
+    .btn { background-color: var(--color-amarillo); color: var(--color-azul); padding: 0.75rem 1.5rem; text-decoration: none; font-weight: bold; border-radius: 4px; }
+    .values { display: flex; flex-wrap: wrap; gap: 1rem; margin-bottom: 2rem; }
+    .values .item { flex: 1 1 200px; display: flex; align-items: center; }
+    .values .item span { margin-left: 0.5rem; }
+    .courses { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1.5rem; margin-bottom: 2rem; }
+    .course-card { border: 1px solid var(--color-azul); border-radius: 4px; padding: 1rem; }
+    .course-card h3 { margin-bottom: 0.5rem; }
+    form { max-width: 500px; margin: 0 auto 2rem; display: grid; gap: 1rem; }
+    form label { display: block; font-weight: bold; }
+    form input, form select { width: 100%; padding: 0.5rem; border: 1px solid #ccc; border-radius: 4px; }
+    .footer { text-align: center; padding: 1rem; font-size: 0.9rem; border-top: 1px solid #eee; }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="logo">Grupo ATU Formación</div>
+  </header>
+  <main>
+    <section class="hero">
+      <h1>Cursos 100% gratuitos para ingenieros</h1>
+      <p>Certificación oficial, plazas limitadas</p>
+      <a href="#form-inscripcion" class="btn">Inscríbete ahora</a>
+    </section>
+
+    <section class="values">
+      <div class="item">📜<span>100% subvencionado por el Ministerio</span></div>
+      <div class="item">💸<span>Gratis para titulados en ingeniería</span></div>
+      <div class="item">✅<span>Certificación oficial reconocida por el Ministerio</span></div>
+      <div class="item">⏳<span>Plazas limitadas (3.100 disponibles)</span></div>
+      <div class="item">📅<span>Matrícula hasta 15 de julio o fin de plazas</span></div>
+    </section>
+
+    <section class="courses">
+      <div class="course-card">
+        <h3>Gestión integral de proyectos BIM con CYPE</h3>
+        <p>Duración: 150 h</p>
+      </div>
+      <div class="course-card">
+        <h3>Autoconsumo y energías renovables para la transición energética</h3>
+        <p>Duración: 150 h</p>
+      </div>
+      <div class="course-card">
+        <h3>Gestión medioambiental en la ingeniería</h3>
+        <p>Duración: 150 h</p>
+      </div>
+    </section>
+
+    <section id="form-inscripcion">
+      <h2>Reserva tu plaza</h2>
+      <form id="inscripcion-form">
+        <label for="nombre">Nombre*</label>
+        <input type="text" id="nombre" name="nombre" required>
+
+        <label for="apellidos">Apellidos</label>
+        <input type="text" id="apellidos" name="apellidos">
+
+        <label for="email">E‑mail*</label>
+        <input type="email" id="email" name="email" required>
+
+        <label for="telefono">Teléfono*</label>
+        <input type="tel" id="telefono" name="telefono" required>
+
+        <label for="provincia">Provincia*</label>
+        <input type="text" id="provincia" name="provincia" required>
+
+        <label for="localidad">Localidad</label>
+        <input type="text" id="localidad" name="localidad">
+
+        <label for="situacion">Situación laboral*</label>
+        <select id="situacion" name="situacion" required>
+          <option value="">Seleccione...</option>
+          <option value="Desempleado">Desempleado</option>
+          <option value="Estudiante">Estudiante</option>
+          <option value="Cuenta ajena">Trabajador por cuenta ajena</option>
+          <option value="Cuenta propia">Trabajador por cuenta propia</option>
+          <option value="Funcionario">Funcionario</option>
+          <option value="Otro">Otro</option>
+        </select>
+
+        <label for="estudios">Nivel de estudios</label>
+        <select id="estudios" name="estudios" required>
+          <option value="">Seleccione...</option>
+          <option value="Ingeniería Técnica">Ingeniería Técnica</option>
+          <option value="Ingeniería Superior">Ingeniería Superior</option>
+          <option value="Máster">Máster</option>
+          <option value="Doctorado">Doctorado</option>
+          <option value="Otro">Otro</option>
+        </select>
+
+        <label>
+          <input type="checkbox" id="consentimiento" name="consentimiento" required>
+          He leído y acepto la <a href="https://cursosatu.grupoatu.com/" target="_blank">política de privacidad</a>
+        </label>
+
+        <button type="submit" class="btn">Enviar</button>
+      </form>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <a href="https://cursosatu.grupoatu.com/" target="_blank">Política de privacidad</a>
+  </footer>
+
+  <script>
+    document.getElementById('inscripcion-form').addEventListener('submit', function(event) {
+      var estudios = document.getElementById('estudios').value;
+      if (estudios !== 'Ingeniería Técnica' && estudios !== 'Ingeniería Superior') {
+        alert('Solo pueden inscribirse ingenieros con título de Ingeniería Técnica o Ingeniería Superior de universidad española.');
+        event.preventDefault();
+      }
+    });
+  </script>
+</body>
+</html>
